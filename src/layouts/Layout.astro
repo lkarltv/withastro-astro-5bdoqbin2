@@ -20,6 +20,8 @@ const { title, lang } = Astro.props;
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<title>{title}</title>
 		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+		
+		<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 	</head>
 	<body class="bg-medical-bg text-medical-dark min-h-screen flex flex-col">
 		<Navbar currentLang={lang} />
@@ -29,5 +31,20 @@ const { title, lang } = Astro.props;
 		</main>
 
 		<Footer lang={lang} />
+
+		<script>
+			// @ts-ignore
+			if (window.netlifyIdentity) {
+				// @ts-ignore
+				window.netlifyIdentity.on("init", user => {
+					if (!user) {
+						// @ts-ignore
+						window.netlifyIdentity.on("login", () => {
+							document.location.href = "/admin/";
+						});
+					}
+				});
+			}
+		</script>
 	</body>
 </html>
