@@ -33,17 +33,39 @@ const { title, lang } = Astro.props;
 		<Footer lang={lang} />
 
 		<script>
+			// Define the logic in a function we can call safely
+			function handleIdentity() {
+				// @ts-ignore
+				if (window.netlifyIdentity) {
+					// 1. Redirect to Admin panel upon successful login
+					// @ts-ignore
+					window.netlifyIdentity.on("login", () => {
+						document.location.href = "/admin/";
+					});
+
+					// 2. FORCE OPEN if we see a recovery token in the URL
+					// This fixes the issue where the redirect hides the token from the widget
+					const hash = window.location.hash;
+					if (hash.includes("recovery_token") || hash.includes("invite_token")) {
+						// @ts-ignore
+						window.netlifyIdentity.open("login"); // Open the modal automatically
+					}
+				}
+			}
+
+			// Run the logic immediately if available, or wait for load
 			// @ts-ignore
 			if (window.netlifyIdentity) {
-				// @ts-ignore
-				window.netlifyIdentity.on("init", user => {
-					if (!user) {
-						// @ts-ignore
-						window.netlifyIdentity.on("login", () => {
-							document.location.href = "/admin/";
-						});
+				handleIdentity();
+			} else {
+				// If script hasn't loaded yet, check every 100ms
+				const interval = setInterval(() => {
+					// @ts-ignore
+					if (window.netlifyIdentity) {
+						clearInterval(interval);
+						handleIdentity();
 					}
-				});
+				}, 100);
 			}
 		</script>
 	</body>
