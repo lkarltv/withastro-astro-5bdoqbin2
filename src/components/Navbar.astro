@@ -1,0 +1,38 @@
+---
+const { currentLang } = Astro.props;
+
+// Simple navigation map
+const navLinks = [
+  { href: `/${currentLang}/`, label: { et: 'Avalehit', en: 'Home', ru: 'Главная' } },
+  { href: `/${currentLang}/kontakt`, label: { et: 'Kontakt', en: 'Contact', ru: 'Контакты' } },
+  { href: `/${currentLang}/vaktsineerimisest`, label: { et: 'Vaktsineerimisest', en: 'Vaccination', ru: 'Вакцинация' } },
+  { href: `/${currentLang}/patsiendile`, label: { et: 'Patsiendile', en: 'For Patients', ru: 'Пациенту' } },
+  { href: `/${currentLang}/hinnakiri`, label: { et: 'Hinnakiri', en: 'Price List', ru: 'Цены' } },
+];
+---
+
+<nav class="w-full bg-medical-bg/90 backdrop-blur-sm border-b border-gray-300 fixed top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between h-16 items-center">
+            <div class="flex-shrink-0 flex items-center">
+                <a href={`/${currentLang}/`} class="text-2xl font-light tracking-wide text-gray-800">
+                    Perearst <span class="font-semibold">Ülle Lomp</span>
+                </a>
+            </div>
+
+            <div class="hidden md:flex space-x-8">
+                {navLinks.map(link => (
+                    <a href={link.href} class="text-gray-600 hover:text-gray-900 px-3 py-2 text-sm font-medium transition-colors">
+                        {link.label[currentLang as 'et' | 'en' | 'ru']}
+                    </a>
+                ))}
+            </div>
+
+            <div class="flex items-center space-x-2 text-sm">
+                <a href="/et/" class={`px-2 py-1 rounded ${currentLang === 'et' ? 'bg-gray-300 font-bold' : 'hover:bg-gray-200'}`}>EST</a>
+                <span class="text-gray-400">|</span>
+                <a href="/en/" class={`px-2 py-1 rounded ${currentLang === 'en' ? 'bg-gray-300 font-bold' : 'hover:bg-gray-200'}`}>ENG</a>
+            </div>
+        </div>
+    </div>
+</nav>

@@ -1,0 +1,93 @@
+backend:
+  name: git-gateway
+  branch: main # Change this if your main branch is called 'master'
+
+media_folder: "public/images"
+public_folder: "/images"
+
+# This ensures the CMS works with your local development server if needed
+local_backend: true
+
+collections:
+  - name: "data"
+    label: "Site Content"
+    files:
+      # ---------------------------------------------------------
+      # 1. PRICE LIST (Hinnakiri)
+      # ---------------------------------------------------------
+      - name: "pricing"
+        label: "Price List"
+        file: "src/data/pricing.json"
+        description: "Edit the prices and categories."
+        fields:
+          - label: "Service Categories"
+            name: "items" # This is the root array
+            widget: "list"
+            fields:
+              - label: "Category Title"
+                name: "category"
+                widget: "object"
+                fields:
+                  - {label: "Estonian", name: "et", widget: "string"}
+                  - {label: "English", name: "en", widget: "string"}
+                  - {label: "Russian", name: "ru", widget: "string"}
+              
+              - label: "Services in this Category"
+                name: "items"
+                widget: "list"
+                fields:
+                  - label: "Service Name"
+                    name: "name"
+                    widget: "object"
+                    fields:
+                      - {label: "Name (ET)", name: "et", widget: "string"}
+                      - {label: "Name (EN)", name: "en", widget: "string"}
+                      - {label: "Name (RU)", name: "ru", widget: "string", required: false}
+                  - label: "Price"
+                    name: "price"
+                    widget: "string" 
+                    hint: "e.g. '35 €' or '20 € + uuringud'"
+
+      # ---------------------------------------------------------
+      # 2. OPENING HOURS
+      # ---------------------------------------------------------
+      - name: "hours"
+        label: "Opening Hours"
+        file: "src/data/hours.json"
+        fields:
+          - label: "Weekly Schedule"
+            name: "items"
+            widget: "list"
+            fields:
+              - label: "Day of Week"
+                name: "day"
+                widget: "object"
+                fields:
+                  - {label: "Day (ET)", name: "et", widget: "string"}
+                  - {label: "Day (EN)", name: "en", widget: "string"}
+                  - {label: "Day (RU)", name: "ru", widget: "string", required: false}
+              - label: "Hours"
+                name: "hours"
+                widget: "string"
+                hint: "e.g. 08:00 - 18:00"
+
+      # ---------------------------------------------------------
+      # 3. CONTACT INFO & FOOTER
+      # ---------------------------------------------------------
+      - name: "contact"
+        label: "Contact & Footer Info"
+        file: "src/data/contact.json" 
+        fields:
+          - label: "Phone Number"
+            name: "phone"
+            widget: "string"
+          - label: "Email"
+            name: "email"
+            widget: "string"
+          - label: "Address"
+            name: "address"
+            widget: "object"
+            fields:
+               - {label: "Address (ET)", name: "et", widget: "string"}
+               - {label: "Address (EN)", name: "en", widget: "string"}
+               - {label: "Address (RU)", name: "ru", widget: "string"}

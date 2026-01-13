@@ -1,0 +1,22 @@
+---
+const { title, lang = 'en' } = Astro.props;
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<!DOCTYPE html>
+<html lang={lang} class="scroll-smooth">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title} | Dr. Smith Family Practice</title>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans flex flex-col min-h-screen">
+    <Navbar currentLang={lang} />
+    
+    <main class="flex-grow container mx-auto px-4 py-8">
+        <slot /> </main>
+
+    <Footer currentLang={lang} />
+</body>
+</html>

@@ -1,0 +1,44 @@
+---
+import contactData from '../data/contact.json';
+
+interface Props {
+  lang: string;
+}
+
+const { lang } = Astro.props;
+
+// Helper to safely get language or fallback to 'et'
+const getLang = (obj: any, l: string) => obj[l] || obj['et'];
+
+const translations = {
+  et: { title: "Perearst Ülle Lomp", phoneLabel: "Telefon", addressLabel: "Aadress", copyright: "Kõik õigused kaitstud" },
+  en: { title: "General Practitioner Ülle Lomp", phoneLabel: "Phone", addressLabel: "Address", copyright: "All rights reserved" },
+  ru: { title: "Семейный врач Юлле Ломп", phoneLabel: "Телефон", addressLabel: "Адрес", copyright: "Все права защищены" }
+};
+
+const t = translations[lang as keyof typeof translations] || translations.et;
+---
+
+<footer class="bg-medical-sage text-white mt-auto border-t border-medical-sage/20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div class="flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
+            <div class="text-center md:text-left space-y-2">
+                <h3 class="text-lg font-semibold tracking-wide">{t.title}</h3>
+                <p class="text-sm">
+                    <span class="font-medium opacity-80 uppercase text-xs tracking-wider">{t.phoneLabel}:</span> 
+                    <a href={`tel:${contactData.phone.replace(/\s/g, '')}`} class="hover:underline text-white">
+                        {contactData.phone}
+                    </a>
+                </p>
+                <p class="text-sm">
+                    <span class="font-medium opacity-80 uppercase text-xs tracking-wider">{t.addressLabel}:</span> 
+                    {getLang(contactData.address, lang)}
+                </p>
+            </div>
+            <div class="text-sm opacity-60 text-center md:text-right">
+                <p>&copy; {new Date().getFullYear()} {t.title}</p>
+                <p class="text-xs mt-1">{t.copyright}</p>
+            </div>
+        </div>
+    </div>
+</footer>

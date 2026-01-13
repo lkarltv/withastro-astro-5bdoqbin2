@@ -1,0 +1,9 @@
+{
+  "nav": {
+    "home": { "en": "Home", "et": "Avaleht", "ru": "Главная" },
+    "contact": { "en": "Contact", "et": "Kontakt", "ru": "Контакты" },
+    "vaccinations": { "en": "Vaccinations", "et": "Vaktsineerimine", "ru": "Вакцинация" },
+    "help": { "en": "Patient Resources", "et": "Patsiendile", "ru": "Помощь" },
+    "pricing": { "en": "Pricing", "et": "Hinnakiri", "ru": "Цены" }
+  }
+}

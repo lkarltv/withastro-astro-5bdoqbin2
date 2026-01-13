@@ -1,0 +1,10 @@
+@import "tailwindcss";
+
+/* You can also add your custom font settings here if you want */
+@theme {
+  --font-sans: "Inter", sans-serif;
+  --color-medical-sage: #8da8a3;
+  --color-medical-bg: #e3e5d8;
+  --color-medical-pink: #eecbc5;
+  --color-medical-dark: #2d3748;
+}

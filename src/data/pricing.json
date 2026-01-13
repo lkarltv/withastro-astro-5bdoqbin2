@@ -1,0 +1,17 @@
+[
+  {
+    "category": { "et": "Tõendid", "en": "Certificates", "ru": "Справки" },
+    "items": [
+      { "name": { "et": "Juhilubade tervisetõend", "en": "Driver's license certificate" }, "price": "35 €" },
+      { "name": { "et": "Relvaluba", "en": "Weapons permit" }, "price": "40 €" },
+      { "name": { "et": "Tervisetõend tööle", "en": "Health certificate for work" }, "price": "20 € + uuringud" }
+    ]
+  },
+  {
+    "category": { "et": "Vaktsineerimine", "en": "Vaccination", "ru": "Вакцинация" },
+    "items": [
+      { "name": { "et": "Gripp (hooajaline)", "en": "Flu (seasonal)" }, "price": "15 €" },
+      { "name": { "et": "Puukentsefaliit", "en": "Tick-borne encephalitis" }, "price": "39 €" }
+    ]
+  }
+]
