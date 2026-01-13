@@ -33,29 +33,24 @@ const { title, lang } = Astro.props;
 		<Footer lang={lang} />
 
 		<script is:inline>
-			// Wait for the page to fully load
-			window.addEventListener('load', () => {
-				// @ts-ignore
-				if (window.netlifyIdentity) {
-					// 1. Initialize the widget explicitly
-					// @ts-ignore
-					window.netlifyIdentity.init();
-
-					// 2. Redirect to Admin panel upon successful login
-					// @ts-ignore
-					window.netlifyIdentity.on("login", () => {
-						document.location.href = "/admin/";
-					});
-
-					// 3. FORCE OPEN if we see a recovery token in the URL
-					const hash = window.location.hash;
-					if (hash.includes("recovery_token") || hash.includes("invite_token")) {
-						console.log("Recovery token detected, opening widget...");
-						// @ts-ignore
-						window.netlifyIdentity.open("login");
+			// 1. Check if we have a special token in the URL
+			const hash = window.location.hash;
+			
+			// 2. If we do, immediately forward to the Admin panel
+			if (hash.includes("recovery_token") || hash.includes("invite_token")) {
+				window.location.href = "/admin/" + hash;
+			}
+			
+			// 3. Optional: Handle normal login redirection if you ever add a login button
+			if (window.netlifyIdentity) {
+				window.netlifyIdentity.on("init", user => {
+					if (!user) {
+						window.netlifyIdentity.on("login", () => {
+							document.location.href = "/admin/";
+						});
 					}
-				}
-			});
+				});
+			}
 		</script>
 	</body>
 </html>
