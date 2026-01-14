@@ -1,0 +1,354 @@
+{
+    "guidelines": [
+      {
+        "name": {
+          "et": "Soovitused lastel palaviku alandamiseks ja valu raviks",
+          "en": "Recommendations for reducing fever and treating pain in children",
+          "ru": "Рекомендации по снижению температуры и лечению боли у детей"
+        },
+        "url": "https://haiglateliit.ee/wp-content/uploads/2015/04/patsiendile_073_laps_ja_palavik.pdf"
+      },
+      {
+        "name": {
+          "et": "Kust oma tervisemurele abi saab (Juhendmaterjal täiskasvanutele)",
+          "en": "Where to get help for health concerns (Guide for adults)",
+          "ru": "Куда обращаться с проблемами со здоровьем (Руководство для взрослых)"
+        },
+        "url": "https://www.kliinikum.ee/wp-content/uploads/2023/11/kust-oma-tervisemurele-abi-saab.-tervisekassa.pdf"
+      },
+      {
+        "name": {
+          "et": "Laste hingamisteede ägedad infektsioonid ja nende kodused ravivõtted",
+          "en": "Acute respiratory infections in children and home treatment",
+          "ru": "Острые респираторные инфекции у детей и домашнее лечение"
+        },
+        "url": "https://www.tai.ee/sites/default/files/2021-03/13608300374_Haigekassa_juhend_hingamisteede_infektsioonid_EST_20.12.2012.pdf"
+      },
+      {
+        "name": {
+          "et": "Imiku ja väikelapse toitmine (nõuanded lapsevanemale)",
+          "en": "Feeding infants and toddlers (Advice for parents)",
+          "ru": "Питание младенцев и малышей (Советы родителям)"
+        },
+        "url": "https://elselts.ee/wp-content/uploads/2023/02/imik_vlaps_toit_koduleht-1.pdf"
+      },
+      {
+        "name": {
+          "et": "Kolonoskoopia uuringu juhend",
+          "en": "Colonoscopy guide",
+          "ru": "Руководство по колоноскопии"
+        },
+        "url": "https://www.kliinikum.ee/patsiendiinfo-andmebaas/koloskoopia/"
+      },
+      {
+        "name": {
+          "et": "Gastroskoopia uuringu juhend",
+          "en": "Gastroscopy guide",
+          "ru": "Руководство по гастроскопии"
+        },
+        "url": "https://www.kliinikum.ee/patsiendiinfo-andmebaas/gastroskoopia/"
+      },
+      {
+        "name": {
+          "et": "Spirograafia ja bronhodilataatortest",
+          "en": "Spirography and bronchodilator test",
+          "ru": "Спирография и тест с бронходилататором"
+        },
+        "url": "https://www.kliinikum.ee/patsiendiinfo-andmebaas/spirograafia-ja-bronhodilataatortest/"
+      },
+      {
+        "name": {
+          "et": "Röntgenuuring",
+          "en": "X-ray examination",
+          "ru": "Рентгенологическое исследование"
+        },
+        "url": "https://haiglateliit.ee/wp-content/uploads/2015/03/R%C3%B6ntgenuuring.pdf"
+      },
+      {
+        "name": {
+          "et": "Podagra tekkimine, ennetamine ja ravi",
+          "en": "Gout: causes, prevention, and treatment",
+          "ru": "Подагра: причины, профилактика и лечение"
+        },
+        "url": "https://www.kliinik.ee/haiguste_abc/podagra/id-1371"
+      }
+    ],
+    "institutions": [
+      {
+        "name": {
+          "et": "Tervisekassa koduleht",
+          "en": "Health Insurance Fund",
+          "ru": "Касса здоровья"
+        },
+        "url": "http://www.tervisekassa.ee/"
+      },
+      {
+        "name": {
+          "et": "Terviseamet",
+          "en": "Health Board",
+          "ru": "Департамент здоровья"
+        },
+        "url": "http://www.terviseamet.ee/"
+      },
+      {
+        "name": {
+          "et": "Sotsiaalministeerium",
+          "en": "Ministry of Social Affairs",
+          "ru": "Министерство социальных дел"
+        },
+        "url": "http://www.sm.ee/"
+      },
+      {
+        "name": {
+          "et": "Raviminfo",
+          "en": "Medicine Info",
+          "ru": "Информация о лекарствах"
+        },
+        "url": "http://www.raviminfo.ee/"
+      },
+      {
+        "name": {
+          "et": "Terviseportaal",
+          "en": "Health Portal",
+          "ru": "Портал здоровья"
+        },
+        "url": "https://www.terviseportaal.ee/"
+      },
+      {
+        "name": {
+          "et": "Eluliin",
+          "en": "Life Line (Crisis Hotline)",
+          "ru": "Линия жизни"
+        },
+        "url": "http://www.eluliin.ee/"
+      },
+      {
+        "name": {
+          "et": "Ohvriabi",
+          "en": "Victim Support",
+          "ru": "Помощь жертвам"
+        },
+        "url": "http://www.ohvriabi.ee/"
+      },
+      {
+        "name": {
+          "et": "Lasteabi",
+          "en": "Child Helpline",
+          "ru": "Помощь детям"
+        },
+        "url": "http://www.lasteabi.ee/"
+      },
+      {
+        "name": {
+          "et": "Psühhiaatriakliiniku erakorraline pöördumine",
+          "en": "Mental health emergency",
+          "ru": "Экстренная психологическая помощь"
+        },
+        "url": "https://www.kliinikum.ee/patsiendile/erakorraline-vastuvott/psuhhiaatriakliinik/"
+      },
+      {
+        "name": {
+          "et": "Mürgistusteabekeskus",
+          "en": "Poison Control Center",
+          "ru": "Информационный центр по отравлениям"
+        },
+        "url": "http://www.16662.ee/"
+      },
+      {
+        "name": {
+          "et": "Eesti Perearstide Selts",
+          "en": "Estonian Society of Family Doctors",
+          "ru": "Эстонское общество семейных врачей"
+        },
+        "url": "http://www.perearstiselts.ee/"
+      }
+    ],
+    "lifestyle": [
+      {
+        "name": {
+          "et": "Tervislik toitumine",
+          "en": "Healthy eating",
+          "ru": "Здоровое питание"
+        },
+        "url": "http://www.toitumine.ee/"
+      },
+      {
+        "name": {
+          "et": "TAI toitumine",
+          "en": "NIHD Nutrition",
+          "ru": "Питание TAI"
+        },
+        "url": "https://toitumine.ee/"
+      },
+      {
+        "name": {
+          "et": "Kaalukaalkulaator",
+          "en": "Weight calculator",
+          "ru": "Калькулятор веса"
+        },
+        "url": "http://tap.nutridata.ee/13"
+      },
+      {
+        "name": {
+          "et": "Tervise edendamine",
+          "en": "Health promotion",
+          "ru": "Укрепление здоровья"
+        },
+        "url": "http://www.terviseinfo.ee/"
+      },
+      {
+        "name": {
+          "et": "Alkoinfo programm “SELGE”",
+          "en": "Alcohol info program 'SELGE'",
+          "ru": "Программа 'SELGE' (Инфо об алкоголе)"
+        },
+        "url": "https://alkoinfo.ee/et/selge/"
+      },
+      {
+        "name": {
+          "et": "Meelemürgid-uimastid",
+          "en": "Drugs and intoxicants",
+          "ru": "Наркотики и психоактивные вещества"
+        },
+        "url": "http://www.narko.ee/"
+      },
+      {
+        "name": {
+          "et": "Tark varem",
+          "en": "Smart Parent",
+          "ru": "Мудрый родитель"
+        },
+        "url": "https://tarkvanem.ee/"
+      },
+      {
+        "name": {
+          "et": "Meeste tervis",
+          "en": "Men's health",
+          "ru": "Мужское здоровье"
+        },
+        "url": "http://www.meestetervis.ee/"
+      },
+      {
+        "name": {
+          "et": "Seksuaaltervis ja HIV",
+          "en": "Sexual health and HIV",
+          "ru": "Сексуальное здоровье и ВИЧ"
+        },
+        "url": "http://www.hiv.ee/"
+      }
+    ],
+    "extra_reading": [
+      {
+        "name": {
+          "et": "Eesti tervisenõustamise keskkond",
+          "en": "Estonian health counseling environment",
+          "ru": "Эстонская среда консультирования по вопросам здоровья"
+        },
+        "url": "https://virtuaalkliinik.ee/"
+      },
+      {
+        "name": {
+          "et": "Meditsiiniportaal Arst",
+          "en": "Medical portal Arst.ee",
+          "ru": "Медицинский портал Arst.ee"
+        },
+        "url": "http://www.arst.ee/"
+      },
+      {
+        "name": {
+          "et": "Vaimse tervise nõustamine",
+          "en": "Mental health counseling",
+          "ru": "Психологическое консультирование"
+        },
+        "url": "http://www.peaasi.ee/"
+      },
+      {
+        "name": {
+          "et": "Vaimse tervise esmaabi",
+          "en": "Mental health first aid",
+          "ru": "Первая помощь при психологических проблемах"
+        },
+        "url": "https://esmaabi.peaasi.ee/"
+      },
+      {
+        "name": {
+          "et": "Vaikuseminutid",
+          "en": "Minutes of Stillness",
+          "ru": "Минуты тишины"
+        },
+        "url": "http://www.vaikuseminutid.ee/"
+      },
+      {
+        "name": {
+          "et": "Esmaabi",
+          "en": "First aid",
+          "ru": "Первая помощь"
+        },
+        "url": "http://www.esmaabi.ee/"
+      },
+      {
+        "name": {
+          "et": "Kaitse neid, kellest hoolid",
+          "en": "Protect those you care about (Vaccination)",
+          "ru": "Защити тех, кто дорог (Вакцинация)"
+        },
+        "url": "http://www.vaktsineeri.ee/"
+      },
+      {
+        "name": {
+          "et": "Gripp",
+          "en": "Influenza",
+          "ru": "Грипп"
+        },
+        "url": "http://www.gripp.ee/"
+      },
+      {
+        "name": {
+          "et": "Viirushepatiidid",
+          "en": "Viral hepatitis",
+          "ru": "Вирусные гепатиты"
+        },
+        "url": "http://www.hepatiit.ee/"
+      },
+      {
+        "name": {
+          "et": "Eesti Kopsuliit",
+          "en": "Estonian Lung Union",
+          "ru": "Эстонский легочный союз"
+        },
+        "url": "http://www.kopsuliit.ee/"
+      },
+      {
+        "name": {
+          "et": "Eesti Allergialiit",
+          "en": "Estonian Allergy Union",
+          "ru": "Эстонский союз аллергии"
+        },
+        "url": "http://www.allergialiit.ee/"
+      },
+      {
+        "name": {
+          "et": "Eesti Peavalu Selts",
+          "en": "Estonian Headache Society",
+          "ru": "Эстонское общество головной боли"
+        },
+        "url": "http://peavalu.ee/"
+      },
+      {
+        "name": {
+          "et": "Eesti Ämmaemandate Ühing",
+          "en": "Estonian Midwives Association",
+          "ru": "Эстонская ассоциация акушерок"
+        },
+        "url": "http://www.ammaemand.org/"
+      },
+      {
+        "name": {
+          "et": "Eesti Diabeedikeskus",
+          "en": "Estonian Diabetes Center",
+          "ru": "Эстонский диабетический центр"
+        },
+        "url": "http://www.diabetes.ee/"
+      }
+    ]
+  }

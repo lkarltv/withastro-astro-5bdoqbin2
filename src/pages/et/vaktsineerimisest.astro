@@ -1,0 +1,27 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import contactData from '../../data/contact.json';
+
+const lang = 'et';
+---
+
+<Layout title="Vaktsineerimisest - Perearst Ülle Lomp" lang={lang}>
+    <section class="max-w-4xl mx-auto px-4 py-12">
+        <h1 class="text-3xl font-light uppercase tracking-widest mb-10 text-medical-dark">Vaktsineerimisest</h1>
+        
+        <div class="bg-white/80 backdrop-blur-sm rounded-xl shadow-sm p-8 md:p-12 text-lg text-gray-700 leading-relaxed border-l-4 border-medical-sage">
+            <p class="mb-6">
+                Vaktsineerima saab tulla vastuvõtuaegadel. Eelnevalt tuleb broneerida aeg 
+                <a href="#" class="font-bold underline text-medical-dark hover:text-medical-sage transition-colors">e-perearstikeskuses</a> 
+                või helistades 
+                <a href={`tel:${contactData.phone.replace(/\s/g, '')}`} class="font-bold whitespace-nowrap text-medical-dark hover:text-medical-sage transition-colors">
+                    {contactData.phone}
+                </a>.
+            </p>
+            
+            <p>
+                Skeemivälised vaktsiinid patsiendiga kokkuleppel.
+            </p>
+        </div>
+    </section>
+</Layout>
