@@ -12,48 +12,52 @@ const mainLocation = contactData.locations.find(l => l.name === 'Tartu') || cont
     <section class="max-w-4xl mx-auto px-4 py-12">
         <h1 class="text-3xl font-light uppercase tracking-widest mb-10 text-medical-dark">Vaktsineerimisest</h1>
         
-        <div class="bg-medical-sage/20 rounded-3xl shadow-sm p-8 md:p-12 text-lg text-gray-700 leading-relaxed">
-            <p class="mb-6">
-                Vaktsineerima saab tulla vastuvõtuaegadel. Eelnevalt tuleb broneerida aeg 
-                <a href="https://eperearstikeskus.ee/patient/" target="_blank" class="font-bold underline text-medical-dark hover:text-medical-sage transition-colors">e-perearstikeskuses</a> 
-                või helistades 
-                <a href={`tel:${mainLocation.phone.replace(/\s/g, '')}`} class="font-bold whitespace-nowrap text-medical-dark hover:text-medical-sage transition-colors">
-                    {mainLocation.phone}
-                </a>.
-            </p>
+        <div class="space-y-8">
             
-            <p class="mb-8">
-                Skeemivälised vaktsiinid patsiendiga kokkuleppel.
-            </p>
+            <div class="bg-medical-sage/20 rounded-3xl shadow-sm p-8 md:p-12 text-lg text-gray-700 leading-relaxed">
+                <p class="mb-6">
+                    Vaktsineerima saab tulla vastuvõtuaegadel. Eelnevalt tuleb broneerida aeg 
+                    <a href="https://eperearstikeskus.ee/patient/" target="_blank" class="font-bold underline text-medical-dark hover:text-medical-sage transition-colors">e-perearstikeskuses</a> 
+                    või helistades 
+                    <a href={`tel:${mainLocation.phone.replace(/\s/g, '')}`} class="font-bold whitespace-nowrap text-medical-dark hover:text-medical-sage transition-colors">
+                        {mainLocation.phone}
+                    </a>.
+                </p>
+                
+                <p>
+                    Skeemivälised vaktsiinid patsiendiga kokkuleppel.
+                </p>
+            </div>
 
-            <hr class="border-gray-300/50 my-8">
+            <div class="bg-medical-sage/20 rounded-3xl shadow-sm p-8 md:p-12 text-lg text-gray-700 leading-relaxed">
+                <p class="mb-6 italic text-base">
+                    Hinnad sõltuvad sisseostetud vaktsiinide hinnast; täpseid hindu küsige, palun, meie perearstikeskusest.
+                </p>
 
-            <p class="mb-6 italic text-base">
-                Hinnad sõltuvad sisseostetud vaktsiinide hinnast; täpseid hindu küsige, palun, meie perearstikeskusest.
-            </p>
+                <h3 class="font-semibold text-xl mb-6 text-medical-dark">
+                    Vaktsineerida on võimalik järgnevate haiguste vastu 
+                    <span class="text-base font-normal text-gray-600 block sm:inline">(sulgudes vaktsineerimiseks sobiv iga):</span>
+                </h3>
 
-            <h3 class="font-semibold text-xl mb-6 text-medical-dark">
-                Vaktsineerida on võimalik järgnevate haiguste vastu 
-                <span class="text-base font-normal text-gray-600 block sm:inline">(sulgudes vaktsineerimiseks sobiv iga):</span>
-            </h3>
+                <ul class="space-y-3 list-disc pl-5 text-base">
+                    <li>Puukentsefaliit (alates 1 a. vanusest; täiskasvanute doos olenevalt vaktsiinist alates 12 või 16 a. vanusest)</li>
+                    <li>A-hepatiit (alates 1 a. vanusest; täiskasvanute doos alates &gt;16 a. vanusest)</li>
+                    <li>B-hepatiit (alates sünnist; täiskasvanute doos alates 16 a. vanusest)</li>
+                    <li>A+B hepatiit (alates 16 a. vanusest)</li>
+                    <li>Gripp (hooajaline ja pandeemiline gripp) (alates 6 elukuu vanusest)</li>
+                    <li>Tuulerõuged (alates 1 a. vanusest)</li>
+                    <li>Pneumokokknakkused (<em>Streptococcus pneumoniae</em>) (6-nädalased kuni 5-aastased lapsed; 2-aastased krooniliste haigustega isikud; &gt;50 a. vanused isikud)</li>
+                    <li>A- või C-serogrupi meningokokkide põhjustatud nakkushaigus (alates 2 a. vanusest)</li>
+                    <li>Kõhutüüfus (alates 2 a. vanusest)</li>
+                    <li>Inimese papilloomiviirus (HPV) (emakakaelavähi tekitaja) (naistele enne suguelu alustamist; võib teha juba tüdrukutele alates 9 a. vanusest)</li>
+                    <li>Mumps-leetrid-punetised (esmane või kordusdoos täiskasvanutele)</li>
+                    <li class="font-semibold text-medical-dark bg-white/40 -ml-2 pl-2 pr-2 py-1 rounded w-fit">
+                        Difteeria + teetanus (täiskasvanutele 10-aastase intervalliga): <span class="text-medical-sage font-bold">TASUTA</span>
+                    </li>
+                    <li>Difteeria + teetanus + läkaköha (täiskasvanutele)</li>
+                </ul>
+            </div>
 
-            <ul class="space-y-3 list-disc pl-5 text-base">
-                <li>Puukentsefaliit (alates 1 a. vanusest; täiskasvanute doos olenevalt vaktsiinist alates 12 või 16 a. vanusest)</li>
-                <li>A-hepatiit (alates 1 a. vanusest; täiskasvanute doos alates &gt;16 a. vanusest)</li>
-                <li>B-hepatiit (alates sünnist; täiskasvanute doos alates 16 a. vanusest)</li>
-                <li>A+B hepatiit (alates 16 a. vanusest)</li>
-                <li>Gripp (hooajaline ja pandeemiline gripp) (alates 6 elukuu vanusest)</li>
-                <li>Tuulerõuged (alates 1 a. vanusest)</li>
-                <li>Pneumokokknakkused (<em>Streptococcus pneumoniae</em>) (6-nädalased kuni 5-aastased lapsed; 2-aastased krooniliste haigustega isikud; &gt;50 a. vanused isikud)</li>
-                <li>A- või C-serogrupi meningokokkide põhjustatud nakkushaigus (alates 2 a. vanusest)</li>
-                <li>Kõhutüüfus (alates 2 a. vanusest)</li>
-                <li>Inimese papilloomiviirus (HPV) (emakakaelavähi tekitaja) (naistele enne suguelu alustamist; võib teha juba tüdrukutele alates 9 a. vanusest)</li>
-                <li>Mumps-leetrid-punetised (esmane või kordusdoos täiskasvanutele)</li>
-                <li class="font-semibold text-medical-dark bg-white/40 -ml-2 pl-2 pr-2 py-1 rounded w-fit">
-                    Difteeria + teetanus (täiskasvanutele 10-aastase intervalliga): <span class="text-medical-sage font-bold">TASUTA</span>
-                </li>
-                <li>Difteeria + teetanus + läkaköha (täiskasvanutele)</li>
-            </ul>
         </div>
     </section>
 </Layout>
