@@ -1,9 +1,23 @@
 {
-  "phone": "+372 634 6630",
   "email": "info@perearst.ee",
-  "address": {
-    "et": "Narva mnt 123, Tartu",
-    "en": "Pärnu mnt 123, Tallinn",
-    "ru": "Пярну мнт 123, Таллинн"
-  }
+  "locations": [
+    {
+      "name": "Mustvee",
+      "phone": "+372 772 6160",
+      "address": {
+        "et": "Tartu tn 5, Mustvee, 49603 Jõgevamaa",
+        "en": "Tartu tn 5, Mustvee, 49603 Jõgeva County",
+        "ru": "Тарту тн 5, Муствеэ, 49603 Йыгевамаа"
+      }
+    },
+    {
+      "name": "Tartu",
+      "phone": "+372 634 6630",
+      "address": {
+        "et": "Pärnu mnt 123, Tartu",
+        "en": "Pärnu mnt 123, Tartu",
+        "ru": "Пярну мнт 123, Тарту"
+      }
+    }
+  ]
 }

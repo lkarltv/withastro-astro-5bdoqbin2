@@ -1,63 +1,228 @@
 {
   "items": [
     {
-      "category": {
-        "et": "Tõendid",
-        "en": "Certificates",
-        "ru": "Справки"
-      },
+      "category": { "et": "Vastuvõtt", "en": "Appointments", "ru": "Прием" },
       "items": [
-        {
-          "name": {
-            "et": "Juhilubade tervisetõend",
-            "en": "Driver's license certificate"
-          },
-          "price": "35 €"
+        { 
+          "name": { 
+            "et": "Arsti esmane vastuvõtt kindlustamata isikule", 
+            "en": "Primary doctor's appointment for uninsured person", 
+            "ru": "Первичный прием врача для незастрахованного лица" 
+          }, 
+          "price": "50 EUR" 
         },
-        {
-          "name": {
-            "et": "Relvaluba",
-            "en": "Weapons permit"
-          },
-          "price": "40 €"
+        { 
+          "name": { 
+            "et": "Arsti korduv vastuvõtt kindlustamata isikule", 
+            "en": "Repeat doctor's appointment for uninsured person", 
+            "ru": "Повторный прием врача для незастрахованного лица" 
+          }, 
+          "price": "30 EUR" 
         },
-        {
-          "name": {
-            "et": "Tervisetõend tööle",
-            "en": "Health certificate for work"
-          },
-          "price": "20 € + uuringud"
+        { 
+          "name": { 
+            "et": "Arsti telefonikonsultatsioon kindlustamata isikule", 
+            "en": "Doctor's phone consultation for uninsured person", 
+            "ru": "Телефонная консультация врача для незастрахованного лица" 
+          }, 
+          "price": "25 EUR" 
         },
-        {
-          "name": {
-            "et": "Test123",
-            "en": "asd",
-            "ru": "asd"
-          },
-          "price": "69"
+        { 
+          "name": { 
+            "et": "Pereõe vastuvõtt kindlustamata isikule", 
+            "en": "Nurse's appointment for uninsured person", 
+            "ru": "Прием медсестры для незастрахованного лица" 
+          }, 
+          "price": "25 EUR" 
+        },
+        { 
+          "name": { 
+            "et": "Koduvisiit kindlustatud ja nimistusse kantud patsiendile (v.a. alla 2 a lapsed, rasedad alates 12. rasedusnädalast ja liikumisvõimetud patsiendid)", 
+            "en": "Home visit for insured patient in registry (excl. children under 2, pregnant from 12th week, immobile patients)", 
+            "ru": "Домашний визит к застрахованному пациенту из списка (кроме детей до 2 лет, беременных с 12 недели и неподвижных)" 
+          }, 
+          "price": "5 EUR" 
+        },
+        { 
+          "name": { 
+            "et": "Koduvisiit kindlustamata patsiendile", 
+            "en": "Home visit for uninsured patient", 
+            "ru": "Домашний визит к незастрахованному пациенту" 
+          }, 
+          "price": "75 EUR" 
+        },
+        { 
+          "name": { 
+            "et": "Kindlustamata isiku pereõe koduvisiit", 
+            "en": "Nurse's home visit for uninsured person", 
+            "ru": "Домашний визит медсестры к незастрахованному лицу" 
+          }, 
+          "price": "40 EUR" 
+        },
+        { 
+          "name": { 
+            "et": "Koduvisiit (üldine)", 
+            "en": "Home visit (general)", 
+            "ru": "Домашний визит (общий)" 
+          }, 
+          "price": "5 EUR" 
+        },
+        { 
+          "name": { 
+            "et": "Retsepti pikendamine kindlustamata patsiendile või teise nimistu patsiendile", 
+            "en": "Prescription renewal for uninsured patient or patient from another registry", 
+            "ru": "Продление рецепта для незастрахованного пациента или пациента из другого списка" 
+          }, 
+          "price": "20 EUR" 
+        },
+        { 
+          "name": { 
+            "et": "Sidumine kindlustamata patsiendile", 
+            "en": "Dressing for uninsured patient", 
+            "ru": "Перевязка для незастрахованного пациента" 
+          }, 
+          "price": "25 EUR" 
         }
       ]
     },
     {
-      "category": {
-        "et": "Vaktsineerimine",
-        "en": "Vaccination",
-        "ru": "Вакцинация"
-      },
+      "category": { "et": "Tõendid (oma nimistu patsientidele)", "en": "Certificates (for registered patients)", "ru": "Справки (для зарегистрированных пациентов)" },
       "items": [
-        {
-          "name": {
-            "et": "Gripp (hooajaline)",
-            "en": "Flu (seasonal)"
-          },
-          "price": "15 €"
+        { 
+          "name": { 
+            "et": "Autojuhi (A, B, C kategooria), Kaitseliidu ja paadijuhi tervisetõend", 
+            "en": "Health certificate for driver (cat. A, B, C), Defense League, and boat skipper", 
+            "ru": "Справка для водителя (кат. A, B, C), Кайтселийта и судоводителя" 
+          }, 
+          "price": "50 EUR" 
         },
-        {
-          "name": {
-            "et": "Puukentsefaliit",
-            "en": "Tick-borne encephalitis"
-          },
-          "price": "39 €"
+        { 
+          "name": { 
+            "et": "Tervisedeklaratsioon paberil", 
+            "en": "Health declaration on paper", 
+            "ru": "Декларация здоровья на бумаге" 
+          }, 
+          "price": "+ 5 EUR" 
+        },
+        { 
+          "name": { 
+            "et": "Tervisetõend tööle, koolipraktikale (sisaldab kopsude röntgenuuringut)", 
+            "en": "Health certificate for work/internship (includes lung X-ray)", 
+            "ru": "Справка для работы/практики (включает рентген легких)" 
+          }, 
+          "price": "40 EUR" 
+        },
+        { 
+          "name": { 
+            "et": " — lisandub kui vajadus on ka bakteriaalseteks analüüsideks", 
+            "en": " — added if bacterial analysis is needed", 
+            "ru": " — добавляется при необходимости бак. анализов" 
+          }, 
+          "price": "+ analüüsid" 
+        },
+        { 
+          "name": { 
+            "et": "Tervisetõend tööle, koolipraktikale (ei sisalda uuringuid)", 
+            "en": "Health certificate for work/internship (no studies included)", 
+            "ru": "Справка для работы/практики (без исследований)" 
+          }, 
+          "price": "30 EUR" 
+        },
+        { 
+          "name": { 
+            "et": "Kindlustusdokumentide (nt. elukindlustus) vormistamine (+ analüüside hind)", 
+            "en": "Processing insurance documents (e.g. life insurance) (+ analysis fee)", 
+            "ru": "Оформление страховых документов (напр. жизнь) (+ цена анализов)" 
+          }, 
+          "price": "40 EUR" 
+        },
+        { 
+          "name": { 
+            "et": "Õnnetusjuhtumikindlustuse dokumentide vormistamine", 
+            "en": "Processing accident insurance documents", 
+            "ru": "Оформление документов по страхованию от несчастных случаев" 
+          }, 
+          "price": "30 EUR" 
+        },
+        { 
+          "name": { 
+            "et": "Tervisetõend relvaloa taotlemiseks", 
+            "en": "Health certificate for weapons permit", 
+            "ru": "Справка для получения разрешения на оружие" 
+          }, 
+          "price": "40 EUR" 
+        },
+        { 
+          "name": { 
+            "et": "Tervisetõend abipolitseinikule", 
+            "en": "Health certificate for assistant police officer", 
+            "ru": "Справка для помощника полицейского" 
+          }, 
+          "price": "40 EUR" 
+        },
+        { 
+          "name": { 
+            "et": "Tõend välisriiki õppima või tööle asujale (+ analüüside ja uuringute hind)", 
+            "en": "Certificate for studying or working abroad (+ analysis/studies fee)", 
+            "ru": "Справка для отъезжающих за границу (+ цена анализов)" 
+          }, 
+          "price": "50 EUR" 
+        },
+        { 
+          "name": { 
+            "et": "Tõend akadeemilise õppepuhkuse saamiseks, haigestumise kinnitamiseks, laagrisse, spordiklubile, reisile", 
+            "en": "Certificate for academic leave, illness confirmation, camp, sports, travel", 
+            "ru": "Справка для академ. отпуска, подтверждения болезни, лагеря, спорта, путешествий" 
+          }, 
+          "price": "20 EUR" 
+        },
+        { 
+          "name": { 
+            "et": "Tõend vastuvõtul viibimise kohta", 
+            "en": "Certificate of attendance at appointment", 
+            "ru": "Справка о посещении приема" 
+          }, 
+          "price": "5 EUR" 
+        },
+        { 
+          "name": { 
+            "et": "Vabatahtliku päästja esmane tervisetõend + uuringud", 
+            "en": "Volunteer rescuer primary health certificate + studies", 
+            "ru": "Первичная справка добровольного спасателя + исследования" 
+          }, 
+          "price": "25 EUR + uuringud" 
+        },
+        { 
+          "name": { 
+            "et": "(Tõend ei ole vajalik, kui olemas mootorsõidukijuhi tervisetõend < 5a. Päästeseadus §35, lg 1)", 
+            "en": "(Certificate not required if valid driver's health certificate exists < 5y. Rescue Act §35, s 1)", 
+            "ru": "(Справка не требуется при наличии справки водителя < 5 лет. Закон о спасательной службе §35, ч 1)" 
+          }, 
+          "price": "" 
+        },
+        { 
+          "name": { 
+            "et": "Muud tõendid asutustele esitamiseks", 
+            "en": "Other certificates for submission to institutions", 
+            "ru": "Прочие справки для представления в учреждения" 
+          }, 
+          "price": "20 EUR" 
+        },
+        { 
+          "name": { 
+            "et": "Võõrkeelne tõend (lisandub tõendi hinnale)", 
+            "en": "Certificate in foreign language (added to price)", 
+            "ru": "Справка на иностранном языке (добавляется к цене)" 
+          }, 
+          "price": "+ 25 EUR" 
+        },
+        { 
+          "name": { 
+            "et": "Immuniseerimispass", 
+            "en": "Immunization passport", 
+            "ru": "Паспорт иммунизации" 
+          }, 
+          "price": "1 EUR" 
         }
       ]
     }

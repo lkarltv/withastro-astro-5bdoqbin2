@@ -1,44 +1,116 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import hoursData from '../../data/hours.json';
-import contactData from '../../data/contact.json'; 
+import contactData from '../../data/contact.json';
 
 const lang = 'et';
 ---
 
-<Layout title="Kontakt" lang={lang}>
-    <section class="max-w-7xl mx-auto px-4 py-12">
-        <h1 class="text-4xl font-light mb-12 text-center">Kontakt ja vastuvõtuajad</h1>
+<Layout title="Kontakt - Perearst Ülle Lomp" lang={lang}>
+    <section class="max-w-4xl mx-auto px-4 py-12">
+        <h1 class="text-4xl font-light mb-12 text-center tracking-wide text-medical-dark">Kontakt ja vastuvõtuajad</h1>
         
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <div class="space-y-8">
             
-            <div class="bg-white p-8 rounded-2xl shadow-sm">
-                <h2 class="text-2xl font-bold mb-6">Asukoht</h2>
-                <p class="mb-4">
-                    <strong>Aadress:</strong><br>
-                    Pärnu mnt 123, Tallinn<br>
-                    10111 Harjumaa
-                </p>
-                <p class="mb-4">
-                    <strong>Telefon:</strong><br>
-                    <a href="tel:+37255555555" class="text-blue-600 underline">+372 5555 5555</a>
-                </p>
+            <div class="bg-medical-sage/20 p-8 md:p-10 rounded-3xl shadow-sm">
+                <h2 class="text-2xl font-bold mb-8 text-center md:text-left text-medical-sage">Asukoht</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-white/60 p-6 rounded-xl">
+                        <h3 class="text-xl font-semibold mb-4 text-gray-800">{contactData.locations[0].name}</h3>
+                        <div class="space-y-2 text-gray-700">
+                            <p>
+                                <strong>Aadress:</strong><br>
+                                {contactData.locations[0].address[lang]}
+                            </p>
+                            <p>
+                                <strong>Telefon:</strong><br>
+                                <a href={`tel:${contactData.locations[0].phone.replace(/\s/g, '')}`} class="text-medical-sage font-bold hover:underline">
+                                    {contactData.locations[0].phone}
+                                </a>
+                            </p>
+                            <p>
+                                <strong>E-mail:</strong><br>
+                                <a href={`mailto:${contactData.email}`} class="hover:underline">{contactData.email}</a>
+                            </p>
+                        </div>
+                    </div>
 
+                    <div class="bg-white/60 p-6 rounded-xl">
+                        <h3 class="text-xl font-semibold mb-4 text-gray-800">{contactData.locations[1].name}</h3>
+                        <div class="space-y-2 text-gray-700">
+                            <p>
+                                <strong>Aadress:</strong><br>
+                                {contactData.locations[1].address[lang]}
+                            </p>
+                            <p>
+                                <strong>Telefon:</strong><br>
+                                <a href={`tel:${contactData.locations[1].phone.replace(/\s/g, '')}`} class="text-medical-sage font-bold hover:underline">
+                                    {contactData.locations[1].phone}
+                                </a>
+                            </p>
+                            <p>
+                                <strong>E-mail:</strong><br>
+                                <a href={`mailto:${contactData.email}`} class="hover:underline">{contactData.email}</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </div>
 
-            <div class="bg-white p-8 rounded-2xl shadow-sm">
-                <h2 class="text-2xl font-bold mb-6">Avatud</h2>
-                <table class="w-full text-left border-collapse">
-                    <tbody>
-                        {hoursData.map((row) => (
-                            <tr class="border-b border-gray-100 last:border-0">
-                                <td class="py-3 font-medium text-gray-700">{row.day[lang]}</td>
-                                <td class="py-3 text-right text-gray-900">{row.hours}</td>
-                            </tr>
-                        ))}
-                    </tbody>
-                </table>
+            <div class="bg-medical-sage/20 p-8 md:p-10 rounded-3xl shadow-sm">
+                <h2 class="text-2xl font-bold mb-8 text-center md:text-left text-medical-sage">Avatud</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    
+                    <div>
+                        <h3 class="text-xl font-semibold mb-6 border-b border-medical-sage/30 pb-2">Mustvee</h3>
+                        
+                        <div class="mb-6">
+                            <h4 class="font-bold text-gray-800 mb-2">Õe vastuvõtt</h4>
+                            <ul class="space-y-1 text-gray-600">
+                                <li class="flex justify-between"><span class="w-20 font-medium">E,T,K,R</span> <span>8:00 - 16:00</span></li>
+                                <li class="flex justify-between"><span class="w-20 font-medium">N</span> <span>8:00 - 18:00</span></li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h4 class="font-bold text-gray-800 mb-2">Arsti vastuvõtt</h4>
+                            <ul class="space-y-1 text-gray-600">
+                                <li class="flex justify-between"><span class="w-20 font-medium">E,T,K,R</span> <span>10:00 - 14:00</span></li>
+                                <li class="flex justify-between"><span class="w-20 font-medium">N</span> <span>13:00 - 18:00</span></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3 class="text-xl font-semibold mb-6 border-b border-medical-sage/30 pb-2">Tartu</h3>
+                        
+                        <div class="space-y-3 text-gray-600 mb-6">
+                            <p class="flex justify-between">
+                                <span class="font-medium">E-R 8:00 - 9:00</span>
+                                <span class="text-sm italic text-gray-500">(kokkuleppel)</span>
+                            </p>
+                            <p class="flex justify-between">
+                                <span class="font-medium">E-R 8:00 - 10:00</span>
+                                <span class="text-sm italic text-gray-500">(helistamine)</span>
+                            </p>
+                        </div>
+
+                        <div class="space-y-4">
+                            <div>
+                                <h4 class="font-bold text-gray-800 mb-1">Arsti vastuvõtt</h4>
+                                <p class="text-gray-600">E-R 14:00 - 16:00</p>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800 mb-1">Õe vastuvõtt</h4>
+                                <p class="text-gray-600">E-R 13:00 - 16:00</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
             </div>
+
         </div>
     </section>
 </Layout>

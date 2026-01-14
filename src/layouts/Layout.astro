@@ -23,7 +23,7 @@ const { title, lang } = Astro.props;
 		
 		<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 	</head>
-	<body class="bg-medical-bg text-medical-dark min-h-screen flex flex-col">
+	<body class="bg-gradient-to-br from-[#fdfbf7] to-[#d4e4dc] text-medical-dark min-h-screen flex flex-col">
 		<Navbar currentLang={lang} />
 		
 		<main class="flex-grow pt-20">
@@ -41,7 +41,7 @@ const { title, lang } = Astro.props;
 				window.location.href = "/admin/" + hash;
 			}
 			
-			// 3. Optional: Handle normal login redirection if you ever add a login button
+			// 3. Optional: Handle normal login redirection
 			if (window.netlifyIdentity) {
 				window.netlifyIdentity.on("init", user => {
 					if (!user) {

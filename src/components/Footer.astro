@@ -17,28 +17,34 @@ const translations = {
 };
 
 const t = translations[lang as keyof typeof translations] || translations.et;
+
+// FIX: Select the main location (Tartu) to display in the footer
+const mainLocation = contactData.locations.find(l => l.name === 'Tartu') || contactData.locations[0];
 ---
 
 <footer class="bg-medical-sage text-white mt-auto border-t border-medical-sage/20">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div class="flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
+            
             <div class="text-center md:text-left space-y-2">
                 <h3 class="text-lg font-semibold tracking-wide">{t.title}</h3>
                 <p class="text-sm">
                     <span class="font-medium opacity-80 uppercase text-xs tracking-wider">{t.phoneLabel}:</span> 
-                    <a href={`tel:${contactData.phone.replace(/\s/g, '')}`} class="hover:underline text-white">
-                        {contactData.phone}
+                    <a href={`tel:${mainLocation.phone.replace(/\s/g, '')}`} class="hover:underline text-white transition-colors">
+                        {mainLocation.phone}
                     </a>
                 </p>
                 <p class="text-sm">
                     <span class="font-medium opacity-80 uppercase text-xs tracking-wider">{t.addressLabel}:</span> 
-                    {getLang(contactData.address, lang)}
+                    {getLang(mainLocation.address, lang)}
                 </p>
             </div>
+
             <div class="text-sm opacity-60 text-center md:text-right">
                 <p>&copy; {new Date().getFullYear()} {t.title}</p>
                 <p class="text-xs mt-1">{t.copyright}</p>
             </div>
+            
         </div>
     </div>
 </footer>
