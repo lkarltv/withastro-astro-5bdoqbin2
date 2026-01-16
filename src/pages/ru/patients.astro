@@ -1,0 +1,73 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import resourceData from '../../data/resources.json';
+
+const lang = 'ru';
+
+// Helper to get name in current language safely
+const getName = (item: any) => item.name[lang] || item.name['et'];
+---
+
+<Layout title="Пациенту - Семейный врач Ülle Lomp" lang={lang}>
+    <section class="max-w-7xl mx-auto px-4 py-12">
+        <h1 class="text-center text-3xl font-light uppercase tracking-widest mb-4 text-medical-dark">Пациенту</h1>
+        
+        <p class="text-center text-gray-500 italic mb-12 max-w-2xl mx-auto text-sm">
+            Обратите внимание: некоторые ресурсы доступны только на эстонском языке.
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            
+            <div class="bg-medical-sage/20 rounded-3xl p-8 h-full">
+                <h2 class="text-2xl text-center mb-6 text-gray-800">Руководства для пациентов</h2>
+                <ul class="space-y-4 text-sm">
+                    {resourceData.guidelines.map((item) => (
+                        <li>
+                            <a href={item.url} target="_blank" class="hover:underline hover:text-medical-sage font-medium text-medical-dark transition-colors">
+                                {getName(item)}
+                            </a>
+                        </li>
+                    ))}
+                </ul>
+            </div>
+
+            <div class="bg-medical-sage/20 rounded-3xl p-8 h-full">
+                <h2 class="text-2xl text-center mb-6 text-gray-800 break-words">Учреждения и услуги</h2>
+                <ul class="space-y-4 text-sm">
+                    {resourceData.institutions.map((item) => (
+                        <li class="border-b border-gray-300/50 pb-2 last:border-0">
+                            <a href={item.url} target="_blank" class="hover:underline hover:text-medical-sage w-full block">
+                                {getName(item)}
+                            </a>
+                        </li>
+                    ))}
+                </ul>
+            </div>
+
+            <div class="bg-medical-sage/20 rounded-3xl p-8 h-full">
+                <h2 class="text-2xl text-center mb-6 text-gray-800">Питание и образ жизни</h2>
+                <ul class="space-y-4 text-sm">
+                    {resourceData.lifestyle.map((item) => (
+                        <li>
+                            <a href={item.url} target="_blank" class="hover:underline hover:text-medical-sage font-medium text-medical-dark transition-colors block py-1">
+                                {getName(item)}
+                            </a>
+                        </li>
+                    ))}
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="mt-12 bg-medical-sage/20 rounded-3xl p-10">
+            <h2 class="text-2xl text-center mb-8 text-medical-dark">Дополнительная информация о здоровье</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-4 text-sm">
+                {resourceData.extra_reading.map((item) => (
+                    <a href={item.url} target="_blank" class="hover:underline hover:text-medical-sage text-medical-dark transition-colors block">
+                        {getName(item)}
+                    </a>
+                ))}
+            </div>
+        </div>
+    </section>
+</Layout>

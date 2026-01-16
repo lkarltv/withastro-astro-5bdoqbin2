@@ -1,0 +1,68 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const lang = 'ru';
+---
+
+<Layout title="Семейный врач Ülle Lomp - Главная" lang={lang}>
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        
+        <div class="grid grid-cols-1 md:grid-cols-5 gap-8 mb-16">
+            
+            <div class="md:col-span-3 bg-medical-sage rounded-3xl p-10 text-center shadow-lg relative overflow-hidden text-white flex flex-col justify-center items-center min-h-[400px]">
+                <h1 class="text-4xl md:text-5xl font-light mb-4 tracking-wide">Запись на прием</h1>
+                <p class="mb-8 text-white/90 max-w-md">Чтобы записаться на прием, нажмите кнопку ниже (требуется предварительный вход)</p>
+                
+                <a href="https://eperearstikeskus.ee/patient/" target="_blank" class="bg-white/90 text-gray-800 px-8 py-4 rounded-full text-lg font-semibold hover:bg-white transition-all shadow-md">
+                    Записаться на прием<br>
+                    <span class="text-sm font-normal text-gray-600">в э-регистратуре</span>
+                </a>
+                
+                <div class="mt-8 text-sm text-white/80">
+                    <p>Записаться можно также по телефону</p>
+                    <a href="/ru/contacts" class="font-bold underline cursor-pointer hover:text-white transition-colors">в часы приема</a>
+                </div>
+            </div>
+
+            <div class="md:col-span-2 bg-medical-pink rounded-3xl p-10 text-center shadow-lg flex flex-col justify-center items-center min-h-[400px]">
+                <h2 class="text-2xl font-normal mb-6 text-gray-800">В нерабочее время помощь можно получить по инфотелефону семейных врачей</h2>
+                <div class="text-gray-700 space-y-2 mb-8">
+                     <p>Линия работает <span class="font-bold">24/7</span></p>
+                     <p>При звонке из Эстонии <span class="font-bold text-xl">1220</span></p>
+                     <p>При звонке из-за границы <span class="font-bold">+372 634 6630</span></p>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="text-3xl text-center font-light mb-10 text-gray-700">Полезно для пациента</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="bg-medical-sage/20 rounded-2xl p-8 text-center hover:bg-medical-sage/30 transition-colors cursor-pointer">
+                <div class="text-4xl mb-4">🌡️</div>
+                <h3 class="text-xl font-semibold mb-4">Профилактика заболеваний</h3>
+                <ul class="space-y-2 text-sm underline text-gray-700">
+                    <li><a href="#">Скрининг рака</a></li>
+                    <li><a href="/ru/vaccination">Информация о вакцинации</a></li>
+                </ul>
+            </div>
+
+            <div class="bg-medical-sage/20 rounded-2xl p-8 text-center hover:bg-medical-sage/30 transition-colors">
+                <div class="text-4xl mb-4">📋</div>
+                <h3 class="text-xl font-semibold mb-4">Не уверены, к кому обратиться?</h3>
+                <ul class="space-y-2 text-sm underline text-gray-700">
+                    <li><a href="https://tervisekassa.ee/kust-tervisemurele-abi-saab" target="_blank">Куда обратиться с проблемой? (Касса здоровья)</a></li>
+                    <li><a href="/ru/patients">Прочая полезная информация</a></li>
+                </ul>
+            </div>
+
+            <div class="bg-medical-sage/20 rounded-2xl p-8 text-center hover:bg-medical-sage/30 transition-colors">
+                <div class="text-4xl mb-4">🧠</div>
+                <h3 class="text-xl font-semibold mb-4">Психологическая помощь</h3>
+                <ul class="space-y-2 text-sm underline text-gray-700">
+                    <li><a href="https://peaasi.ee" target="_blank">Peaasi.ee</a></li>
+                    <li><a href="https://www.kliinikum.ee/psyhhiaatriakliinik/kliinikust/soltuvushairete-keskus" target="_blank">Центр зависимостей</a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+</Layout>

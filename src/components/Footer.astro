@@ -1,50 +1,45 @@
 ---
 import contactData from '../data/contact.json';
 
-interface Props {
-  lang: string;
-}
-
 const { lang } = Astro.props;
 
-// Helper to safely get language or fallback to 'et'
-const getLang = (obj: any, l: string) => obj[l] || obj['et'];
-
-const translations = {
-  et: { title: "Perearst Ülle Lomp", phoneLabel: "Telefon", addressLabel: "Aadress", copyright: "Kõik õigused kaitstud" },
-  en: { title: "General Practitioner Ülle Lomp", phoneLabel: "Phone", addressLabel: "Address", copyright: "All rights reserved" },
-  ru: { title: "Семейный врач Юлле Ломп", phoneLabel: "Телефон", addressLabel: "Адрес", copyright: "Все права защищены" }
+// Labels for "Phone" and "Address"
+const labels = {
+    et: { phone: 'TELEFON', address: 'AADRESS', rights: 'Kõik õigused kaitstud' },
+    en: { phone: 'PHONE', address: 'ADDRESS', rights: 'All rights reserved' },
+    ru: { phone: 'ТЕЛЕФОН', address: 'АДРЕС', rights: 'Все права защищены' }
 };
 
-const t = translations[lang as keyof typeof translations] || translations.et;
+const t = labels[lang] || labels.et;
 
-// FIX: Select the main location (Tartu) to display in the footer
+// FIX: Name is now hardcoded to Latin alphabet
+const doctorName = "Ülle Lomp"; 
+
+const currentYear = new Date().getFullYear();
+
+// Get the Tartu location data (or fallback to the first one)
 const mainLocation = contactData.locations.find(l => l.name === 'Tartu') || contactData.locations[0];
 ---
 
-<footer class="bg-medical-sage text-white mt-auto border-t border-medical-sage/20">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div class="flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
+<footer class="bg-medical-sage text-white py-6 mt-auto">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center md:items-end gap-4">
+        
+        <div class="text-center md:text-left space-y-1">
+            <h3 class="text-xl font-light tracking-wide mb-2">Perearst {doctorName}</h3>
             
-            <div class="text-center md:text-left space-y-2">
-                <h3 class="text-lg font-semibold tracking-wide">{t.title}</h3>
-                <p class="text-sm">
-                    <span class="font-medium opacity-80 uppercase text-xs tracking-wider">{t.phoneLabel}:</span> 
-                    <a href={`tel:${mainLocation.phone.replace(/\s/g, '')}`} class="hover:underline text-white transition-colors">
-                        {mainLocation.phone}
-                    </a>
-                </p>
-                <p class="text-sm">
-                    <span class="font-medium opacity-80 uppercase text-xs tracking-wider">{t.addressLabel}:</span> 
-                    {getLang(mainLocation.address, lang)}
-                </p>
-            </div>
-
-            <div class="text-sm opacity-60 text-center md:text-right">
-                <p>&copy; {new Date().getFullYear()} {t.title}</p>
-                <p class="text-xs mt-1">{t.copyright}</p>
-            </div>
+            <p class="text-xs font-medium opacity-90 uppercase tracking-wider">
+                {t.phone}: <span class="font-normal normal-case">{mainLocation.phone}</span>
+            </p>
             
+            <p class="text-xs font-medium opacity-90 uppercase tracking-wider">
+                {t.address}: <span class="font-normal normal-case">{mainLocation.address[lang]}</span>
+            </p>
         </div>
+
+        <div class="text-center md:text-right text-xs opacity-70">
+             <p>&copy; {currentYear} Perearst {doctorName}</p>
+             <p>{t.rights}</p>
+        </div>
+
     </div>
 </footer>

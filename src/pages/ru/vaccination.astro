@@ -1,0 +1,63 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import contactData from '../../data/contact.json';
+
+const lang = 'ru';
+
+// Select the main location (Tartu) for the phone link
+const mainLocation = contactData.locations.find(l => l.name === 'Tartu') || contactData.locations[0];
+---
+
+<Layout title="Вакцинация - Семейный врач Ülle Lomp" lang={lang}>
+    <section class="max-w-4xl mx-auto px-4 py-12">
+        <h1 class="text-3xl font-light uppercase tracking-widest mb-10 text-medical-dark">О вакцинации</h1>
+        
+        <div class="space-y-8">
+            
+            <div class="bg-medical-sage/20 rounded-3xl shadow-sm p-8 md:p-12 text-lg text-gray-700 leading-relaxed">
+                <p class="mb-6">
+                    Вакцинация проводится в часы приема. Необходимо предварительно забронировать время в 
+                    <a href="https://eperearstikeskus.ee/patient/" target="_blank" class="font-bold underline text-medical-dark hover:text-medical-sage transition-colors">э-регистратуре</a> 
+                    или позвонив по телефону 
+                    <a href={`tel:${mainLocation.phone.replace(/\s/g, '')}`} class="font-bold whitespace-nowrap text-medical-dark hover:text-medical-sage transition-colors">
+                        {mainLocation.phone}
+                    </a>.
+                </p>
+                
+                <p>
+                    Внеплановые вакцины по договоренности с пациентом.
+                </p>
+            </div>
+
+            <div class="bg-medical-sage/20 rounded-3xl shadow-sm p-8 md:p-12 text-lg text-gray-700 leading-relaxed">
+                <p class="mb-6 italic text-base">
+                    Цены зависят от стоимости закупленных вакцин; точные цены спрашивайте, пожалуйста, в нашем центре семейных врачей.
+                </p>
+
+                <h3 class="font-semibold text-xl mb-6 text-medical-dark">
+                    Вакцинация возможна от следующих заболеваний 
+                    <span class="text-base font-normal text-gray-600 block sm:inline">(в скобках указан подходящий возраст):</span>
+                </h3>
+
+                <ul class="space-y-3 list-disc pl-5 text-base">
+                    <li>Клещевой энцефалит (с 1 года; взрослая доза в зависимости от вакцины с 12 или 16 лет)</li>
+                    <li>Гепатит А (с 1 года; взрослая доза с &gt;16 лет)</li>
+                    <li>Гепатит B (с рождения; взрослая доза с 16 лет)</li>
+                    <li>Гепатит A+B (с 16 лет)</li>
+                    <li>Грипп (сезонный и пандемический) (с 6-месячного возраста)</li>
+                    <li>Ветряная оспа (с 1 года)</li>
+                    <li>Пневмококковые инфекции (<em>Streptococcus pneumoniae</em>) (дети от 6 недель до 5 лет; лица с хроническими заболеваниями с 2 лет; лица старше 50 лет)</li>
+                    <li>Менингококковая инфекция серогруппы A или C (с 2 лет)</li>
+                    <li>Брюшной тиф (с 2 лет)</li>
+                    <li>Вирус папилломы человека (ВПЧ) (возбудитель рака шейки матки) (женщинам до начала половой жизни; можно делать девочкам с 9 лет)</li>
+                    <li>Эпидемический паротит-корь-краснуха (первичная или повторная доза для взрослых)</li>
+                    <li class="font-semibold text-medical-dark bg-white/40 -ml-2 pl-2 pr-2 py-1 rounded w-fit">
+                        Дифтерия + столбняк (взрослым с интервалом 10 лет): <span class="text-medical-sage font-bold">БЕСПЛАТНО</span>
+                    </li>
+                    <li>Дифтерия + столбняк + коклюш (для взрослых)</li>
+                </ul>
+            </div>
+
+        </div>
+    </section>
+</Layout>

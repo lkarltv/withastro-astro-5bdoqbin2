@@ -1,0 +1,63 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import contactData from '../../data/contact.json';
+
+const lang = 'en';
+
+// Select the main location (Tartu) for the phone link
+const mainLocation = contactData.locations.find(l => l.name === 'Tartu') || contactData.locations[0];
+---
+
+<Layout title="Vaccination - GP Ülle Lomp" lang={lang}>
+    <section class="max-w-4xl mx-auto px-4 py-12">
+        <h1 class="text-3xl font-light uppercase tracking-widest mb-10 text-medical-dark">Vaccination</h1>
+        
+        <div class="space-y-8">
+            
+            <div class="bg-medical-sage/20 rounded-3xl shadow-sm p-8 md:p-12 text-lg text-gray-700 leading-relaxed">
+                <p class="mb-6">
+                    Vaccination is available during reception hours. You must book an appointment in advance at the 
+                    <a href="https://eperearstikeskus.ee/patient/" target="_blank" class="font-bold underline text-medical-dark hover:text-medical-sage transition-colors">e-family doctor center</a> 
+                    or by calling 
+                    <a href={`tel:${mainLocation.phone.replace(/\s/g, '')}`} class="font-bold whitespace-nowrap text-medical-dark hover:text-medical-sage transition-colors">
+                        {mainLocation.phone}
+                    </a>.
+                </p>
+                
+                <p>
+                    Non-schedule vaccines by agreement with the patient.
+                </p>
+            </div>
+
+            <div class="bg-medical-sage/20 rounded-3xl shadow-sm p-8 md:p-12 text-lg text-gray-700 leading-relaxed">
+                <p class="mb-6 italic text-base">
+                    Prices depend on the cost of purchased vaccines; please ask our family doctor center for exact prices.
+                </p>
+
+                <h3 class="font-semibold text-xl mb-6 text-medical-dark">
+                    Vaccination is available against the following diseases 
+                    <span class="text-base font-normal text-gray-600 block sm:inline">(suitable age for vaccination in brackets):</span>
+                </h3>
+
+                <ul class="space-y-3 list-disc pl-5 text-base">
+                    <li>Tick-borne encephalitis (from age 1; adult dose depending on vaccine from age 12 or 16)</li>
+                    <li>Hepatitis A (from age 1; adult dose from &gt;16 years)</li>
+                    <li>Hepatitis B (from birth; adult dose from age 16)</li>
+                    <li>Hepatitis A+B (from age 16)</li>
+                    <li>Influenza (seasonal and pandemic flu) (from 6 months of age)</li>
+                    <li>Chickenpox (from age 1)</li>
+                    <li>Pneumococcal infections (<em>Streptococcus pneumoniae</em>) (children 6 weeks to 5 years; persons with chronic diseases aged 2; persons &gt;50 years)</li>
+                    <li>Infectious disease caused by serogroup A or C meningococci (from age 2)</li>
+                    <li>Typhoid fever (from age 2)</li>
+                    <li>Human papillomavirus (HPV) (cause of cervical cancer) (for women before starting sexual life; can be done for girls from age 9)</li>
+                    <li>Mumps-Measles-Rubella (primary or repeat dose for adults)</li>
+                    <li class="font-semibold text-medical-dark bg-white/40 -ml-2 pl-2 pr-2 py-1 rounded w-fit">
+                        Diphtheria + Tetanus (for adults at 10-year intervals): <span class="text-medical-sage font-bold">FREE</span>
+                    </li>
+                    <li>Diphtheria + Tetanus + Pertussis (for adults)</li>
+                </ul>
+            </div>
+
+        </div>
+    </section>
+</Layout>

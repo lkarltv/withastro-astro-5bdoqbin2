@@ -43,10 +43,13 @@ collections:
                       - {label: "Name (ET)", name: "et", widget: "string"}
                       - {label: "Name (EN)", name: "en", widget: "string"}
                       - {label: "Name (RU)", name: "ru", widget: "string", required: false}
-                  - label: "Price"
-                    name: "price"
-                    widget: "string" 
-                    hint: "e.g. '35 €' or '20 € + uuringud'"
+                   - label: "Price"
+                      name: "price"
+                      widget: "object"
+                      fields:
+                        - {label: "ET", name: "et", widget: "string", required: false}
+                        - {label: "EN", name: "en", widget: "string", required: false}
+                        - {label: "RU", name: "ru", widget: "string", required: false}
 
       # ---------------------------------------------------------
       # 2. OPENING HOURS

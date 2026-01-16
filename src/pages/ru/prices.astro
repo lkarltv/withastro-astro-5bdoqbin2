@@ -2,16 +2,16 @@
 import Layout from '../../layouts/Layout.astro';
 import pricingData from '../../data/pricing.json';
 
-const lang = 'et';
+const lang = 'ru';
 
 // FIX: Added ': any' to silence the TypeScript error
 const getPrice = (item: any) => item.price && (item.price[lang] || item.price['et']);
 ---
 
-<Layout title="Hinnakiri - Perearst Ülle Lomp" lang={lang}>
+<Layout title="Price List - GP Ülle Lomp" lang={lang}>
     <section class="max-w-4xl mx-auto px-4 py-12">
-        <h1 class="text-4xl font-light text-center tracking-wide text-medical-dark mb-4">Hinnakiri</h1>
-        <p class="text-center text-gray-600 mb-12">Teenuste eest saab maksta <span class="font-bold">ainult sularahas</span></p>
+        <h1 class="text-4xl font-light text-center tracking-wide text-medical-dark mb-4">Прейскурант</h1>
+        <p class="text-center text-gray-600 mb-12">Оплата услуг производится только <span class="font-bold">наличными</span></p>
 
         <div class="space-y-8">
             {pricingData.items.map((category) => (

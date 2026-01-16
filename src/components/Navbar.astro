@@ -1,49 +1,56 @@
 ---
 const { currentLang } = Astro.props;
 
-// 1. Define the labels for the menu
+// 1. Labels for the menu items
 const labels = {
   et: { home: 'Avaleht', contact: 'Kontakt', vacc: 'Vaktsineerimisest', patients: 'Patsiendile', prices: 'Hinnakiri' },
   en: { home: 'Home', contact: 'Contact', vacc: 'Vaccination', patients: 'For Patients', prices: 'Price List' },
   ru: { home: 'Главная', contact: 'Контакты', vacc: 'Вакцинация', patients: 'Пациенту', prices: 'Цены' }
 };
 
-// 2. Define the exact URLs for each page in each language
+// 2. Exact URLs for each page (must match your filenames from Step 2)
 const routes = {
   et: { home: '/et/', contact: '/et/kontakt', vacc: '/et/vaktsineerimisest', patients: '/et/patsiendile', prices: '/et/hinnakiri' },
   en: { home: '/en/', contact: '/en/contact', vacc: '/en/vaccination', patients: '/en/patients', prices: '/en/pricing' },
-  ru: { home: '/ru/', contact: '/ru/contact', vacc: '/ru/vaccination', patients: '/ru/patients', prices: '/ru/prices' }
+  ru: { home: '/ru/', contact: '/ru/contacts', vacc: '/ru/vaccination', patients: '/ru/patients', prices: '/ru/prices' }
 };
 
-// Get the correct set of routes and labels based on currentLang
+// Select current language data
 const t = labels[currentLang] || labels.et;
 const r = routes[currentLang] || routes.et;
+
+// Logic to determine equivalent pages for the Language Switcher
+// (Simple mapping based on the current path would require more complex logic, 
+// so for now we hardcode the switchers to go to the Home of that language 
+// OR you can manually map them if you want perfect page-to-page switching. 
+// For this setup, we will keep it simple: switching language goes to that language's Homepage 
+// OR we can make it smart if you pass the 'currentSlug' prop. Let's stick to simple links for now.)
 ---
 
-<nav class="w-full bg-medical-bg/90 backdrop-blur-sm border-b border-gray-300 fixed top-0 z-50">
+<nav class="w-full bg-white/90 backdrop-blur-sm border-b border-gray-200 fixed top-0 z-50 transition-all duration-300">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex justify-between h-16 items-center">
+        <div class="flex justify-between h-20 items-center">
             
             <div class="flex-shrink-0 flex items-center">
-                <a href={r.home} class="text-2xl font-light tracking-wide text-gray-800">
-                    Perearst <span class="font-semibold">Ülle Lomp</span>
+                <a href={r.home} class="text-2xl font-light tracking-wide text-medical-dark group">
+                    Perearst <span class="font-semibold group-hover:text-medical-sage transition-colors">Ülle Lomp</span>
                 </a>
             </div>
 
             <div class="hidden md:flex space-x-8">
-                <a href={r.home} class="text-gray-600 hover:text-gray-900 px-3 py-2 text-sm font-medium transition-colors">{t.home}</a>
-                <a href={r.contact} class="text-gray-600 hover:text-gray-900 px-3 py-2 text-sm font-medium transition-colors">{t.contact}</a>
-                <a href={r.vacc} class="text-gray-600 hover:text-gray-900 px-3 py-2 text-sm font-medium transition-colors">{t.vacc}</a>
-                <a href={r.patients} class="text-gray-600 hover:text-gray-900 px-3 py-2 text-sm font-medium transition-colors">{t.patients}</a>
-                <a href={r.prices} class="text-gray-600 hover:text-gray-900 px-3 py-2 text-sm font-medium transition-colors">{t.prices}</a>
+                <a href={r.home} class="text-gray-600 hover:text-medical-sage px-3 py-2 text-sm font-medium transition-colors uppercase tracking-wider">{t.home}</a>
+                <a href={r.contact} class="text-gray-600 hover:text-medical-sage px-3 py-2 text-sm font-medium transition-colors uppercase tracking-wider">{t.contact}</a>
+                <a href={r.vacc} class="text-gray-600 hover:text-medical-sage px-3 py-2 text-sm font-medium transition-colors uppercase tracking-wider">{t.vacc}</a>
+                <a href={r.patients} class="text-gray-600 hover:text-medical-sage px-3 py-2 text-sm font-medium transition-colors uppercase tracking-wider">{t.patients}</a>
+                <a href={r.prices} class="text-gray-600 hover:text-medical-sage px-3 py-2 text-sm font-medium transition-colors uppercase tracking-wider">{t.prices}</a>
             </div>
 
-            <div class="flex items-center space-x-2 text-sm">
-                <a href="/et/" class={`px-2 py-1 rounded ${currentLang === 'et' ? 'bg-gray-300 font-bold' : 'hover:bg-gray-200'}`}>EST</a>
-                <span class="text-gray-400">|</span>
-                <a href="/en/" class={`px-2 py-1 rounded ${currentLang === 'en' ? 'bg-gray-300 font-bold' : 'hover:bg-gray-200'}`}>ENG</a>
-                <span class="text-gray-400">|</span>
-                <a href="/ru/" class={`px-2 py-1 rounded ${currentLang === 'ru' ? 'bg-gray-300 font-bold' : 'hover:bg-gray-200'}`}>RUS</a>
+            <div class="flex items-center space-x-3 text-sm font-medium">
+                <a href="/et/" class={`transition-colors ${currentLang === 'et' ? 'text-medical-sage font-bold' : 'text-gray-400 hover:text-gray-600'}`}>EST</a>
+                <span class="text-gray-300">|</span>
+                <a href="/en/" class={`transition-colors ${currentLang === 'en' ? 'text-medical-sage font-bold' : 'text-gray-400 hover:text-gray-600'}`}>ENG</a>
+                <span class="text-gray-300">|</span>
+                <a href="/ru/" class={`transition-colors ${currentLang === 'ru' ? 'text-medical-sage font-bold' : 'text-gray-400 hover:text-gray-600'}`}>RUS</a>
             </div>
         </div>
     </div>
