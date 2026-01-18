@@ -6,16 +6,17 @@ import '../styles/global.css';
 interface Props {
 	title: string;
 	lang: string;
+	description?: string;
 }
 
-const { title, lang } = Astro.props;
+const { title, lang, description = "Perearst Ülle Lomp - Perearstiteenus Mustvees ja Tartus." } = Astro.props;
 ---
 
 <!doctype html>
 <html lang={lang} class="scroll-smooth">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="description" content="Perearstikeskus - Primary Care" />
+		<meta name="description" content={description} />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<title>{title}</title>

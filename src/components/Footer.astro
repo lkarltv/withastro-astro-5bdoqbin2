@@ -3,40 +3,45 @@ import contactData from '../data/contact.json';
 
 const { lang } = Astro.props;
 
-// Labels for "Phone" and "Address"
+// Labels
 const labels = {
-    et: { phone: 'TELEFON', address: 'AADRESS', rights: 'Kõik õigused kaitstud' },
+    et: { phone: 'TEL', address: 'AADRESS', rights: 'Kõik õigused kaitstud' },
     en: { phone: 'PHONE', address: 'ADDRESS', rights: 'All rights reserved' },
-    ru: { phone: 'ТЕЛЕФОН', address: 'АДРЕС', rights: 'Все права защищены' }
+    ru: { phone: 'ТЕЛ', address: 'АДРЕС', rights: 'Все права защищены' }
 };
 
-const t = labels[lang] || labels.et;
+const t = labels[lang as keyof typeof labels] || labels.et;
 
-// FIX: Name is now hardcoded to Latin alphabet
+// Name hardcoded to Latin
 const doctorName = "Ülle Lomp"; 
 
 const currentYear = new Date().getFullYear();
-
-// Get the Tartu location data (or fallback to the first one)
-const mainLocation = contactData.locations.find(l => l.name === 'Tartu') || contactData.locations[0];
 ---
 
 <footer class="bg-medical-sage text-white py-6 mt-auto">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center md:items-end gap-4">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center md:items-end gap-6 md:gap-4">
         
-        <div class="text-center md:text-left space-y-1">
-            <h3 class="text-xl font-light tracking-wide mb-2">Perearst {doctorName}</h3>
-            
-            <p class="text-xs font-medium opacity-90 uppercase tracking-wider">
-                {t.phone}: <span class="font-normal normal-case">{mainLocation.phone}</span>
-            </p>
-            
-            <p class="text-xs font-medium opacity-90 uppercase tracking-wider">
-                {t.address}: <span class="font-normal normal-case">{mainLocation.address[lang]}</span>
-            </p>
+        <div class="text-center md:text-left pb-1">
+            <h3 class="text-lg font-light tracking-wide">Perearst {doctorName}</h3>
         </div>
 
-        <div class="text-center md:text-right text-xs opacity-70">
+        <div class="flex flex-col sm:flex-row gap-6 md:gap-12 text-center md:text-left">
+            {contactData.locations.map((loc) => (
+                <div class="space-y-0.5">
+                    <p class="text-xs font-bold opacity-80 uppercase tracking-widest mb-1">{loc.name}</p>
+                    <p class="text-xs whitespace-nowrap">
+                        <span class="opacity-60 text-[10px] uppercase tracking-wider mr-1">{t.phone}:</span> 
+                        <span class="opacity-90">{loc.phone}</span>
+                    </p>
+                    <p class="text-xs whitespace-nowrap">
+                        <span class="opacity-60 text-[10px] uppercase tracking-wider mr-1">{t.address}:</span> 
+                        <span class="opacity-90">{loc.address[lang]}</span>
+                    </p>
+                </div>
+            ))}
+        </div>
+
+        <div class="text-center md:text-right text-xs opacity-60 pb-1">
              <p>&copy; {currentYear} Perearst {doctorName}</p>
              <p>{t.rights}</p>
         </div>
